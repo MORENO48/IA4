@@ -57,18 +57,30 @@ public class PanelFondo extends javax.swing.JPanel implements Runnable{
         );
     }// </editor-fold>//GEN-END:initComponents
     public void run(){
+        int Pf= getHeight()-75;
+        double HI = 500;
+        double H = 0;
+        double Vo = 0;
+        double G = 9.8;
+        double T = 0;
+        double unit = ((getHeight()-75)-y) / HI;
         try {
             while(true){
                 while(y<getHeight()-75){
-                    Thread.sleep(25);
-                    y+=3;
+                    Thread.sleep(10);
+                    T=T+0.2;
+                    H = (Vo*T) + HI- ((0.5*G)*(Math.pow(T, 2)));
+                    y = Pf-(int)(H*unit);
+                    System.out.println(unit);
+                    System.out.println("T= "+T+" H= "+H+" Y= "+y);
+                    //y+=3;
                     repaint();
                 }
-                while(y>10){
+                /*while(y>10){
                     Thread.sleep(25);
                     y-=3;
                     repaint();
-                }
+                }*/
             }
         } catch (Exception e) {
             System.out.println("Sucedio un error: "+e.getMessage());
