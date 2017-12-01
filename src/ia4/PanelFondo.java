@@ -82,6 +82,20 @@ public class PanelFondo extends javax.swing.JPanel implements Runnable{
                     repaint();
                 }*/
             }
+            /*
+                _FIS.setVariable("xcol", pathX);
+                _FIS.setVariable("yfil", pathY);
+                _FIS.evaluate();
+
+                double objetivo = _FIS.getVariable("objetivo").getLatestDefuzzifiedValue();
+                dialogoFIS.repaint();
+
+                System.out.println("objetivo: " +objetivo);
+                System.out.println(laberinto[pathY][pathX]);
+                System.out.println("COL: "+pathX+" FIL: "+pathY);
+            */
+            
+            
         } catch (Exception e) {
             System.out.println("Sucedio un error: "+e.getMessage());
         }
