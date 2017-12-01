@@ -1,7 +1,18 @@
 package ia4;
 public class Aterrizaje extends javax.swing.JFrame {
+    private net.sourceforge.jFuzzyLogic.FIS _FIS;
+    private net.sourceforge.jFuzzyLogic.plot.JDialogFis dialogoFIS;
+    private net.sourceforge.jFuzzyLogic.plot.JFuzzyChart chart;
+    
     public Aterrizaje() {
         initComponents();
+        _FIS= net.sourceforge.jFuzzyLogic.FIS.load("game.fcl",true);
+        dialogoFIS=new net.sourceforge.jFuzzyLogic.plot.JDialogFis(_FIS);
+        
+        if(_FIS==null){
+            javax.swing.JOptionPane.showMessageDialog(null, "ERROR");
+            System.exit(1);
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
